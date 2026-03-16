@@ -12,8 +12,9 @@ for ligne_index in range(m):
     for colonne_index in range(n):
         valeur=int(input())
         ligne.append(valeur)
-    matrice.appendjhhj
+    matrice.append
     matrice.append(ligne)
 
 Test
 
+print("--Puissance--")
