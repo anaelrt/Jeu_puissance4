@@ -10,6 +10,7 @@ matrice=[]
 for ligne_index in range(m):
     ligne=[]
     for colonne_index in range(n):
-        valeur=int(input)
+        valeur=int(input())
         ligne.append(valeur)
     matrice.append(ligne)
+
