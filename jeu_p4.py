@@ -20,7 +20,7 @@ def addToken(joueur, colonne):
 
     
 
-
+test
 
 
 #print("--Puissance--")
