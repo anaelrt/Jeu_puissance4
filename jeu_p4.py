@@ -13,6 +13,7 @@ for ligne_index in range(m):
     for colonne_index in range(n):
         valeur=int(input())
         ligne.append(valeur)
+    matrice.append
     matrice.append(ligne)
 
 
@@ -20,3 +21,4 @@ def addToken(joueur, colonne):
     pass
 
 
+print("--Puissance--")
