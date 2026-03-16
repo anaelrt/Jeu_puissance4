@@ -1,9 +1,8 @@
-"jeu_p4"
-#a=2
-#b=3
-#c=4
-#d=5
+import random
 
+choix_joueur=random.randint(1, 2)
+if choix_joueur == 1:
+    print("tu commences")
 
 m=int(input("nombre de lignes"))
 n=int(input("nombre de colonnes"))
@@ -18,7 +17,10 @@ for ligne_index in range(m):
 
 
 def addToken(joueur, colonne):
-    pass
+
+    
 
 
-print("--Puissance--")
+
+
+#print("--Puissance--")
