@@ -4,6 +4,7 @@
 #c=4
 #d=5
 
+
 m=int(input("nombre de lignes"))
 n=int(input("nombre de colonnes"))
 matrice=[]
@@ -14,5 +15,8 @@ for ligne_index in range(m):
         ligne.append(valeur)
     matrice.append(ligne)
 
-Test
+
+def addToken(joueur, colonne):
+    pass
+
 
