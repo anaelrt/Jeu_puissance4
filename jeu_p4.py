@@ -22,10 +22,5 @@ for ligne_index in range(m):
 
 
 def addToken(joueur, colonne):
-
-    
-
 #test
-
-
 #print("--Puissance--")
