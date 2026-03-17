@@ -1,9 +1,9 @@
 
 
-import random                                        #choix de l'ordre du joueur
-choix_joueur=random.randint(1, 2)
-print(choix_joueur)
-if choix_joueur == 1:
+import random                                        #ordre du joueur
+ordre_joueur=random.randint(1, 2)
+print(ordre_joueur)
+if ordre_joueur == 1:
     print("tu commences")
 else:
     print("tu ne commences pas à jouer en premier")
