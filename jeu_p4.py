@@ -8,6 +8,12 @@ if ordre_joueur == 1:
 else:
     print("tu ne commences pas à jouer en premier")
 
+if ordre_joueur == 1:           #assignation des pions aux joueurs
+    ordre_joueur="O"
+    print("tu as les pions O")
+else:
+    ordre_joueur ="X"
+    print("tu as les pions X")
 
 m=6    #matrice de depart
 n=7
