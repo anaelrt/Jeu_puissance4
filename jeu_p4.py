@@ -15,14 +15,14 @@ matrice=[]
 for ligne_index in range(m):
     ligne=[]
     for colonne_index in range(n):
-        valeur=" "
+        valeur=str(' ')
         ligne.append(valeur)
-    matrice.append
     matrice.append(ligne)
 
 def affiche_matrice(matrice):
     for ligne in matrice:
         print(ligne)
+    return ligne
 
 print(affiche_matrice(matrice))
 
