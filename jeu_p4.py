@@ -32,12 +32,12 @@ def affiche_matrice(matrice):
 affiche_matrice(matrice)
 
 
-choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))-1   #ca fonctionne pas
-for i in range(43):
-    if choix_colonne<0 and choix_colonne>6:
-        print("cette colonne est inexistante")
-        choix_colonne=int(input("ecrire une colonne entre 1 et 7"))-1
-    else:
+choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   #ca fonctionne pas
+while choix_colonne<0 or choix_colonne>6:
+    print("cette colonne est inexistante")
+    choix_colonne=int(input("ecrire une colonne entre 0 et 6 : "))
+else:
+    for i in range(43):
         while choix_colonne == " ":
             if ordre_joueur == 1:
                 matrice.append("O")
