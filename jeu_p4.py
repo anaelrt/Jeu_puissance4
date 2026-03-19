@@ -9,10 +9,10 @@ else:
     print("tu ne commences pas à jouer en premier")
 
 if ordre_joueur == 1:           #assignation des pions aux joueurs
-    ordre_joueur="O"
+    pion_joueur="O"
     print("tu as les pions O")
 else:
-    ordre_joueur ="X"
+    pion_joueur ="X"
     print("tu as les pions X")
 
 m=6    #matrice de depart
@@ -28,9 +28,24 @@ for ligne_index in range(m):
 def affiche_matrice(matrice):
     for ligne in matrice:
         print(ligne)
-    return ligne
 
-print(affiche_matrice(matrice))
+affiche_matrice(matrice)
+
+
+choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))-1   #ca fonctionne pas
+for i in range(43):
+    if choix_colonne<0 and choix_colonne>6:
+        print("cette colonne est inexistante")
+        choix_colonne=int(input("ecrire une colonne entre 1 et 7"))-1
+    else:
+        while choix_colonne == " ":
+            if ordre_joueur == 1:
+                matrice.append("O")
+            else:
+                matrice.append("X")
+            
+
+
 
 
 
