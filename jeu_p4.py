@@ -15,8 +15,8 @@ else:
     pion_joueur ="X"
     print("tu as les pions X")
 
-m=6    #matrice de depart
-n=7
+m=int(input("donner un nombre de ligne"))    #matrice de depart
+n=int(input("donner un nombre de colonne"))
 matrice=[]
 for ligne_index in range(m):
     ligne=[]
@@ -45,7 +45,7 @@ else:
                 matrice.append("X")
 
             
-#tets
+
 
 
 
