@@ -38,14 +38,13 @@ while choix_colonne<0 or choix_colonne>6:
     choix_colonne=int(input("ecrire une colonne entre 0 et 6 : "))
 else:
     for i in range(43):
-        while choix_colonne == " ":
+       while choix_colonne == " ":
             if ordre_joueur == 1:
                 matrice.append("O")
             else:
                 matrice.append("X")
 
             
-
 
 
 
