@@ -47,6 +47,7 @@ else:
             
 #tets
 
+#TEST STEEVEN 
 
 
 #def addToken(joueur, colonne):
