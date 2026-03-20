@@ -29,7 +29,7 @@ def affiche_matrice(matrice):
     for ligne in matrice:
         print(ligne)
 
-affiche_matrice(matrice)
+affichage_matrice(matrice)
 
 
 choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   #ca fonctionne pas
@@ -43,6 +43,7 @@ else:
                 matrice.append("O")
             else:
                 matrice.append("X")
+
             
 
 
