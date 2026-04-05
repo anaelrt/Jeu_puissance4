@@ -51,42 +51,43 @@ else:
 def victoire(grille):
     m = len(grille)        # nombre de lignes
     n = len(grille[0])     # nombre de colonnes
-   # --- Horizontal ---
+
+    # --- Horizontal ---
     for i in range(m):
         for j in range(n - 3):
-            if grille[i][j] != " " and \
-               grille[i][j] == grille[i][j+1] == grille[i][j+2] == grille[i][j+3]:
-                return grille[i][j]   # retourne "X" ou "O"         
-    
+            if (grille[i][j] != " " and
+                grille[i][j] == grille[i][j+1] == grille[i][j+2] == grille[i][j+3]):
+                return grille[i][j]
+
     # --- Vertical ---
     for i in range(m - 3):
         for j in range(n):
-            if grille[i][j] != " " and \
-               grille[i][j] == grille[i+1][j] == grille[i+2][j] == grille[i+3][j]:
+            if (grille[i][j] != " " and
+                grille[i][j] == grille[i+1][j] == grille[i+2][j] == grille[i+3][j]):
                 return grille[i][j]
-   
+
     # --- Diagonale ↘ ---
     for i in range(m - 3):
         for j in range(n - 3):
-            if grille[i][j] != " " and \
-               grille[i][j] == grille[i+1][j+1] == grille[i+2][j+2] == grille[i+3][j+3]:
+            if (grille[i][j] != " " and
+                grille[i][j] == grille[i+1][j+1] == grille[i+2][j+2] == grille[i+3][j+3]):
                 return grille[i][j]
 
     # --- Diagonale ↗ ---
     for i in range(3, m):
         for j in range(n - 3):
-            if grille[i][j] != " " and \
-               grille[i][j] == grille[i-1][j+1] == grille[i-2][j+2] == grille[i-3][j+3]:
+            if (grille[i][j] != " " and
+                grille[i][j] == grille[i-1][j+1] == grille[i-2][j+2] == grille[i-3][j+3]):
                 return grille[i][j]
 
     return None   # pas de gagnant
- # Test
+
+
+# Test
 gagnant = victoire(grille)
+
 if gagnant:
     print("La partie est terminée")
     print(f"Le joueur ayant les pions {gagnant} a gagné")
 
-#TEST STEEVEN 
 
-
-#def addToken(joueur, colonne):
