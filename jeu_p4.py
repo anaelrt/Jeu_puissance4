@@ -35,7 +35,7 @@ def affiche_matrice(matrice):
 
 while True:
     print(affiche_matrice(matrice))
-    choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   #ca fonctionne pas
+    choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   
     while choix_colonne<0 or choix_colonne>=n:
         print("cette colonne est inexistante")
         choix_colonne = int(input(f"donner une colonne entre 0 et {n-1} : "))
@@ -44,7 +44,7 @@ while True:
     for ligne in range(m-1, -1, -1):              #mettre le pion dans le plus bas de la colonne
         if matrice[ligne][choix_colonne]==" ":
             matrice[ligne][choix_colonne]=joueur_actuel
-            place_pion= True
+            place_pion= True                          #gemini
             break
 
     if not place_pion:
