@@ -57,28 +57,28 @@ while True:
         m = len(matrice)        # nombre de lignes
         n = len(matrice[0])     # nombre de colonnes
 
-    # --- Horizontal ---
+    # horizontal 
         for i in range(m):
             for j in range(n - 3):
                 if (matrice[i][j] != " " and
                     matrice[i][j] == matrice[i][j+1] == matrice[i][j+2] == matrice[i][j+3]):
                     return matrice[i][j]
 
-    # --- Vertical ---
+    # vertical
         for i in range(m - 3):
             for j in range(n):
                 if (matrice[i][j] != " " and
                     matrice[i][j] == matrice[i+1][j] == matrice[i+2][j] == matrice[i+3][j]):
                     return matrice[i][j]
 
-    # --- Diagonale ↘ ---
+    # diagonale vers le bas
         for i in range(m - 3):
             for j in range(n - 3):
                 if (matrice[i][j] != " " and
                     matrice[i][j] == matrice[i+1][j+1] == matrice[i+2][j+2] == matrice[i+3][j+3]):
                     return matrice[i][j]
 
-    # --- Diagonale ↗ ---
+    # diagonale vers le haut
         for i in range(3, m):
             for j in range(n - 3):
                 if (matrice[i][j] != " " and
