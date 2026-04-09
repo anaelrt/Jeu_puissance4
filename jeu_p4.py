@@ -45,6 +45,8 @@ for ligne in range(m-1, -1, -1):   #mettre le pion dans le plus bas de la colonn
 else:
     print("la colonne est pleine ")
 
+tour_joueur+=1
+
 
 
 
