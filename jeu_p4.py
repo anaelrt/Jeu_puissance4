@@ -3,17 +3,20 @@
 import random                                        #ordre du joueur
 ordre_joueur=random.randint(1, 2)
 print(ordre_joueur)
-if ordre_joueur == 1:
+if ordre_joueur == 1:                                #assignation des pions aux joueurs
+    pion_joueur1="O"
+    pion_joueur2="X"
+    print("tu as les pions O")
     print("tu commences")
 else:
+    pion_joueur2 ="X"
+    pion_joueur1="O"
+    print("tu as les pions X")
     print("tu ne commences pas à jouer en premier")
 
-if ordre_joueur == 1:           #assignation des pions aux joueurs
-    pion_joueur="O"
-    print("tu as les pions O")
-else:
-    pion_joueur ="X"
-    print("tu as les pions X")
+
+joueur_actuel=pion_joueur1
+tour_joueur=1
 
 m=int(input("donner un nombre de ligne : "))    #matrice de depart
 n=int(input("donner un nombre de colonne : "))
@@ -29,67 +32,81 @@ def affiche_matrice(matrice):
     for ligne in matrice:
         print(ligne)
 
-affiche_matrice(matrice)
+
+while True:
+    print(affiche_matrice(matrice))
+    choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   #ca fonctionne pas
+    while choix_colonne<0 or choix_colonne>=n:
+        print("cette colonne est inexistante")
+        choix_colonne = int(input(f"donner une colonne entre 0 et {n-1} : "))
+
+    place_pion= False
+    for ligne in range(m-1, -1, -1):              #mettre le pion dans le plus bas de la colonne
+        if matrice[ligne][choix_colonne]==" ":
+            matrice[ligne][choix_colonne]=joueur_actuel
+            place_pion= True
+            break
+
+    if not place_pion:
+        print("la colonne est pleine")
+        continue
 
 
 
-choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   #ca fonctionne pas
-while choix_colonne<0 or choix_colonne>6:
-    print("cette colonne est inexistante")
-    choix_colonne = int(input("Écrire une colonne entre 0 et {n-1} : "))
-
-for ligne in range(m-1, -1, -1):   #mettre le pion dans le plus bas de la colonne
-    if matrice[ligne][choix_colonne]==" ":
-        matrice[ligne][choix_colonne]=pion_joueur
-    print(matrice)
-else:
-    print("la colonne est pleine ")
-
-tour_joueur+=1
-
-
-
-
-def victoire(grille):
-    m = len(grille)        # nombre de lignes
-    n = len(grille[0])     # nombre de colonnes
+    def victoire(matrice):            #verif si il y a victoire
+        m = len(matrice)        # nombre de lignes
+        n = len(matrice[0])     # nombre de colonnes
 
     # --- Horizontal ---
-    for i in range(m):
-        for j in range(n - 3):
-            if (grille[i][j] != " " and
-                grille[i][j] == grille[i][j+1] == grille[i][j+2] == grille[i][j+3]):
-                return grille[i][j]
+        for i in range(m):
+            for j in range(n - 3):
+                if (matrice[i][j] != " " and
+                    matrice[i][j] == matrice[i][j+1] == matrice[i][j+2] == matrice[i][j+3]):
+                    return matrice[i][j]
 
     # --- Vertical ---
-    for i in range(m - 3):
-        for j in range(n):
-            if (grille[i][j] != " " and
-                grille[i][j] == grille[i+1][j] == grille[i+2][j] == grille[i+3][j]):
-                return grille[i][j]
+        for i in range(m - 3):
+            for j in range(n):
+                if (matrice[i][j] != " " and
+                    matrice[i][j] == matrice[i+1][j] == matrice[i+2][j] == matrice[i+3][j]):
+                    return matrice[i][j]
 
     # --- Diagonale ↘ ---
-    for i in range(m - 3):
-        for j in range(n - 3):
-            if (grille[i][j] != " " and
-                grille[i][j] == grille[i+1][j+1] == grille[i+2][j+2] == grille[i+3][j+3]):
-                return grille[i][j]
+        for i in range(m - 3):
+            for j in range(n - 3):
+                if (matrice[i][j] != " " and
+                    matrice[i][j] == matrice[i+1][j+1] == matrice[i+2][j+2] == matrice[i+3][j+3]):
+                    return matrice[i][j]
 
     # --- Diagonale ↗ ---
-    for i in range(3, m):
-        for j in range(n - 3):
-            if (grille[i][j] != " " and
-                grille[i][j] == grille[i-1][j+1] == grille[i-2][j+2] == grille[i-3][j+3]):
-                return grille[i][j]
+        for i in range(3, m):
+            for j in range(n - 3):
+                if (matrice[i][j] != " " and
+                    matrice[i][j] == matrice[i-1][j+1] == matrice[i-2][j+2] == matrice[i-3][j+3]):
+                    return matrice[i][j]
 
-    return None   # pas de gagnant
+        
+        return None  # pas de gagnant
+    
+    
 
 
-# Test
-gagnant = victoire(grille)
+    gagnant = victoire(matrice)              
 
-if gagnant:
-    print("La partie est terminée")
-    print(f"Le joueur ayant les pions {gagnant} a gagné")
+    if gagnant:
+        print(affiche_matrice(matrice))
+        print("La partie est terminée")
+        print(f"Le joueur ayant les pions {gagnant} a gagné")
+        break
+
+    if not gagnant:
+        if joueur_actuel==pion_joueur1:     #changer de joueur
+            joueur_actuel=pion_joueur2
+        else:
+            joueur_actuel=pion_joueur1
+
+    tour_joueur=1
+
+
 
 
