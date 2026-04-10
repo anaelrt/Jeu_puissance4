@@ -44,7 +44,7 @@ while True:
     for ligne in range(m-1, -1, -1):              #mettre le pion dans le plus bas de la colonne
         if matrice[ligne][choix_colonne]==" ":
             matrice[ligne][choix_colonne]=joueur_actuel
-            place_pion= True                          #gemini
+            place_pion= True                          
             break
 
     if not place_pion:
@@ -105,7 +105,7 @@ while True:
         else:
             joueur_actuel=pion_joueur1
 
-    tour_joueur=1
+    tour_joueur+=1
 
 
 
