@@ -136,6 +136,8 @@ while 1:
                     print(ligne)
             affiche_nvl_matrice(nvl_matrice)
         continue
+    elif nvl_partie!=2:
+        continue
     else:
         print("arret du jeu")
         break
