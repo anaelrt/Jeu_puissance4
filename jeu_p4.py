@@ -1,6 +1,16 @@
+tab1=[]
+tab2=[]
+
+def enregistrer_partie(joueur, colonne):
+    if joueur==pion_joueur1:
+        tab1.append(colonne)
+    else:    
+        tab2.append( colonne)
 
 
-import random                                        #ordre du joueur
+
+import random              
+                          #ordre du joueur
 ordre_joueur=random.randint(1, 2)
 print(ordre_joueur)
 if ordre_joueur == 1:                                #assignation des pions aux joueurs
@@ -44,6 +54,7 @@ while True:
     for ligne in range(m-1, -1, -1):              #mettre le pion dans le plus bas de la colonne
         if matrice[ligne][choix_colonne]==" ":
             matrice[ligne][choix_colonne]=joueur_actuel
+            enregistrer_partie(joueur_actuel, choix_colonne)
             place_pion= True                          
             break
 
@@ -104,9 +115,15 @@ while True:
             joueur_actuel=pion_joueur2
         else:
             joueur_actuel=pion_joueur1
-
     tour_joueur+=1
+    
+    
+                                    
+file=open("jeu_p4.txt", "w")           #enregistrer la partie mais pas sure que ce soit ca 
+file.write("coups du joueur 1 : " + str(tab1) + "\n")
+file.write("Coups du joueur 2 : " + str(tab2) + "\n") 
+file.close()
 
 
-
-
+print(tab1)
+print(tab2)

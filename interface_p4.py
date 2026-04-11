@@ -1,10 +1,10 @@
-import tkinter as tk
+import tkinter 
 import random
 
 lignes=6
 colonnes=7
 
-fenetre=tk.Tk()
+fenetre=tkinter.Tk()
 fenetre.title("puissance 4")
 fenetre.mainloop()
 
