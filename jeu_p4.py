@@ -131,6 +131,22 @@ while 1:
                 ligne.append(valeur)
             matrice.append(ligne)
         continue
+    elif nvl_partie!=2:
+        print("voulez vous recommencer une partie ?")      
+        print("oui : tapez 1")
+        print("non : tapez 2")
+        nvl_partie=int(input()) 
+        if nvl_partie==1:
+            matrice=[]
+            for ligne_index in range(m):
+                ligne=[]
+                for colonne_index in range(n):
+                    valeur=str(' ')
+                    ligne.append(valeur)
+                matrice.append(ligne)
+        else:
+            print("la partie est terminée")
+            break
     else:
         print("arret du jeu")
         break
