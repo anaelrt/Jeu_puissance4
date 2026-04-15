@@ -1,11 +1,11 @@
 tab1=[]
 tab2=[]
 
-def enregistrer_partie(joueur, colonne):
+def enregistrer_partie(joueur, choix_colonne):
     if joueur==pion_joueur1:
-        tab1.append(colonne)
+        tab1.append(choix_colonne)
     else:    
-        tab2.append( colonne)
+        tab2.append( choix_colonne)
 
 
 
@@ -123,20 +123,13 @@ while 1:
     nvl_partie=int(input())
     if nvl_partie==1:
         print("on recommence")
-        nvl_matrice=[]
+        matrice=[]
         for ligne_index in range(m):
             ligne=[]
             for colonne_index in range(n):
                 valeur=str(' ')
                 ligne.append(valeur)
-            nvl_matrice.append(ligne)
-
-            def affiche_nvl_matrice(nvl_matrice):
-                for ligne in nvl_matrice:
-                    print(ligne)
-            affiche_nvl_matrice(nvl_matrice)
-        continue
-    elif nvl_partie!=2:
+            matrice.append(ligne)
         continue
     else:
         print("arret du jeu")
