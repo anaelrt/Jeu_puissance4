@@ -144,6 +144,11 @@ while 1:
                     valeur=str(' ')
                     ligne.append(valeur)
                 matrice.append(ligne)
+        elif nvl_partie!=2:
+            j=0
+            while j!=2 and j==1:
+                nvl_partie=int(input())
+                j+=1
         else:
             print("la partie est terminée")
             break
