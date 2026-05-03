@@ -16,7 +16,7 @@ Règles du jeu:
 3. Si la colonne est pleine, il doit mettre le pion dans une autre colonne
 4. Le premier joueur à aligner 4 pions à l'horizontale, à la verticale ou en diagonale à gagner
 
-Il permet de :
+Le programme permet de :
 - jouer sur une grille de 6 lignes et 7 colonnes
 - choisir aléatoirement le premier joueur
 - mettre les pions dans les colonnes
