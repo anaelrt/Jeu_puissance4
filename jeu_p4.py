@@ -1,11 +1,12 @@
 tab1=[]
 tab2=[]
 
-def enregistrer_partie(joueur, choix_colonne):
-    if joueur==pion_joueur1:
+def enregistrer_partie(joueur_actuel, choix_colonne):
+    if joueur_actuel==pion_joueur1:
         tab1.append(choix_colonne)
+
     else:    
-        tab2.append( choix_colonne)
+        tab2.append(choix_colonne)
 
 
 
@@ -26,10 +27,9 @@ else:
 
 
 joueur_actuel=pion_joueur1
-tour_joueur=1
 
-m=int(input("donner un nombre de ligne : "))    #matrice de depart
-n=int(input("donner un nombre de colonne : "))
+m=6    #matrice de depart
+n=7
 
 def creation_matrice():
     matrice=[]
@@ -83,15 +83,31 @@ def victoire(matrice):            #verif si il y a victoire
         
     return None  # pas de gagnant              
 
+
 def sauvegarder_file():                                
     file=open("jeu_p4.txt", "w")           #enregistrer la partie  
     file.write("coups du joueur1 : " + str(tab1) + "\n")
     file.write("Coups du joueur2 : " + str(tab2) + "\n") 
     file.close()
 
+def annuler_coup():
+    global joueur_actuel
+    if joueur_actuel==pion_joueur1:
+        choix_colonne=tab2.pop()
+        matrice[ligne][choix_colonne]=" "
+        joueur_actuel=pion_joueur2
+    else:
+        choix_colonne=tab1.pop()
+        matrice[ligne][choix_colonne]=" "
+        joueur_actuel=pion_joueur1
+
 while True:
     affiche_matrice(matrice)
+    print("tapez -1 pour annuler le dernier coup")
     choix_colonne=int(input("dans quelle colonne voulez vous mettre le pion ? "))   
+    if choix_colonne==-1:
+        annuler_coup()
+        continue
     while choix_colonne<0 or choix_colonne>=n:
         print("cette colonne est inexistante")
         choix_colonne = int(input(f"donner une colonne entre 0 et {n-1} : "))
@@ -128,7 +144,7 @@ while True:
             joueur_actuel=pion_joueur1
             continue
         else:
-            print("choix non valide, arret du jeu")
+            print("arret du jeu")
             break
 
         
