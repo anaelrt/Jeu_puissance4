@@ -22,7 +22,7 @@ Le programme permet de :
 - mettre les pions dans les colonnes
 - alterner les joueurs après que le pion soit mis dans la colonne
 - enregistrer les coups dans un fichier .txt (chaque joueur à son tableau dans lequel est enregistré ses coups)
-- annuler le dernier coups et de replacer le pion
+- annuler le dernier coup et de replacer le pion
 - verifier s'il y a victoire (horizontale, verticale, diagonales)
 - recommencer une partie si souhaiter
 - affichage par l'interface  graphique tkinter

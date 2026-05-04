@@ -93,7 +93,6 @@ taille=90
 
 fenetre=tk.Tk()               #tkinter
 fenetre.title("PUISSANCE 4")
-fenetre.geometry("1500x1500")
 fenetre["bg"]="blue"
 
 canvas=tk.Canvas(fenetre, background="blue", height=m*taille, width=n*taille)
